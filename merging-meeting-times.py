@@ -22,3 +22,27 @@ Do not assume the meetings are in order. The meeting times are coming from multi
 
 Write a solution that's efficient even when we can't put a nice upper bound on the numbers representing our time ranges. Here we've simplified our times down to the number of 30-minute slots past 9:00 am. But we want the function to work even for very large numbers, like Unix timestamps. In any case, the spirit of the challenge is to merge meetings where start_time and end_time don't have an upper bound.
 '''
+
+
+def merge_ranges(meetings):
+    meetings.sort()
+
+    merged_meetings = [meetings[0]]
+
+    for i in range(1, len(meetings)):
+        if meetings[i][0] <= merged_meetings[-1][1]:
+            merged_meetings[-1] = (merged_meetings[-1][0],
+                                   max(merged_meetings[-1][1], meetings[i][1]))
+        else:
+            merged_meetings.append(meetings[i])
+    return merged_meetings
+
+
+myMeetings = [(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)]
+print(merge_ranges(myMeetings))
+
+
+'''
+Time: O(nlogn)
+Space: O(n)
+'''
