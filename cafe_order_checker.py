@@ -90,6 +90,9 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
   if len(take_out_orders) + len(dine_in_orders) != len(served_orders):
     return False
 
+  if take_out_orders + dine_in_orders == served_orders:
+    return True
+
   current_index_take_out = 0
   current_index_dine_in = 0
 
