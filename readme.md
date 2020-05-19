@@ -7,3 +7,4 @@ In order to keep myself accountable, I have decided to share my solutions to the
 * [Reverse string in place](./reverse_string_in_place.py)
 * [Reverse words](./reverse_words.py)
 * [Merge sorted arrays](./merge_sorted_arrays.py)
+* [Cafè order checker](./cafe_order_checker.py)
