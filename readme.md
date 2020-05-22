@@ -14,3 +14,4 @@ In order to keep myself accountable, I have decided to share my solutions to the
 * [Permutation palindrome](./permutation_palindrome.py)
 * [Word cloud](./word_cloud.py)
 * [Top scores](./top_scores.py)
+* [Highest product of 3](./highest_product_of_3.py)
