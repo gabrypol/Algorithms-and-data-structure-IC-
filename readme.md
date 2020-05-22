@@ -12,3 +12,4 @@ In order to keep myself accountable, I have decided to share my solutions to the
 ## 2. Hashing and hash tables
 * [Inflight entertainment](./inflight_entertainment.py)
 * [Permutation palindrome](./permutation_palindrome.py)
+* [Word Cloud](./word_cloud.py)
