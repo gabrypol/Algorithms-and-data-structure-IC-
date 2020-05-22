@@ -22,7 +22,6 @@ We’re defining nn as the number of unsorted_scores because we’re expecting t
 And, we'll treat highest_possible_score as a constant instead of factoring it into our big O time and space costs because the highest possible score isn’t going to change. Even if we do redesign the game a little, the scores will stay around the same order of magnitude.
 '''
 
-
 def sort_scores(unsorted_scores, highest_possible_score):
 
     # Sort the scores in O(n) time
@@ -34,7 +33,11 @@ def sort_scores(unsorted_scores, highest_possible_score):
 
     return sorted_list
 
+unsorted_scores = [37, 89, 41, 65, 91, 53]
+HIGHEST_POSSIBLE_SCORE = 100
+print(sort_scores(unsorted_scores, HIGHEST_POSSIBLE_SCORE))
+
 '''
-Time: O(n)
+Time: O(n) Time complexity is linear because the problem assumes that the highest_possible_score is a constant (read the text above).
 Space: O(n)
 '''
