@@ -19,7 +19,7 @@ def word_cloud_data(input_string):
   current_word_start_index = 0
   current_word_length = 0
   for i, char in enumerate(input_string):
-    if len(input_string) - 1 != i and (char.isalpha()  or (char == "'" and input_string[i - 1].isalpha() and input_string[i + 1].isalpha()) or (char == "-" and input_string[i - 1].isalpha() and input_string[i + 1].isalpha())):
+    if len(input_string) - 1 != i and (char.isalpha()  or ((char == "'" or char == "-") and input_string[i - 1].isalpha() and input_string[i + 1].isalpha())):
       if current_word_length == 0:
         current_word_start_index = i
       current_word_length += 1
