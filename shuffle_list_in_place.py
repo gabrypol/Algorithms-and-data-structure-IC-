@@ -8,7 +8,7 @@ Assume that you have a function get_random(floor, ceiling) for getting a random 
 
 '''
 Solution:
-  I iterate through the input list and at each iteration I select randomly one index in the range(current_iteration_index, index_of_last_element_of_the_list). Then, I swap the element at index i (current iteration) with the element at the randomly generated index.
+  I iterate through the input list and at each iteration I select randomly one index in the range(current_index, index_of_last_element_of_the_list). Then, I swap the element at current_index with the element at the randomly generated index.
   This is done in place, since I haven't allocated any additional space in memory.
 '''
 
