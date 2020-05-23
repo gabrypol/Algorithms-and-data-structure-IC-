@@ -19,3 +19,4 @@ In order to keep myself accountable, I have decided to share my solutions to the
 * [Highest product of 3](./highest_product_of_3.py)
 * [Cafè order checker](./cafe_order_checker.py) (Also in 1. Array and string manipulation)
 * [Product of all other numbers](./product_of_other_numbers.py)
+* [Shuffle list in place](./shuffle_list_in_place.py)
