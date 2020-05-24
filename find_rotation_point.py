@@ -23,6 +23,11 @@ Write a function for finding the index of the "rotation point," which is where I
 '''
 
 def find_rotation_point(words):
+
+  sorted_list = sorted(words)
+  if sorted_list == words:
+    return 0
+
   idx_floor = 0
   idx_ceiling = len(words) - 1
   first_word = words[0]
@@ -31,7 +36,7 @@ def find_rotation_point(words):
     if words[idx_guess] > first_word:
       idx_floor = idx_guess
     elif words[idx_guess] < first_word:
-      idx_ceiling = idx_guess # 3
+      idx_ceiling = idx_guess
 
     if idx_floor + 1 == idx_ceiling:
       return idx_ceiling
@@ -50,5 +55,5 @@ print(find_rotation_point(my_words))
 
 '''
 Time: O(logn) because I have used binary search.
-Space: O(1)
+Space: O(n). The space complexity would be O(1) if it wasn't for the check we are doing at the beginning: in order to check whether the input list is already sorted, I need to allocate a new list sorted_list of size n, where n is the length of the given list.
 '''
