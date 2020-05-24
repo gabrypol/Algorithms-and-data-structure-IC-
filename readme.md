@@ -21,3 +21,7 @@ In order to keep myself accountable, I have decided to share my solutions to the
 * [Product of all other numbers](./product_of_other_numbers.py)
 * [Shuffle list in place](./shuffle_list_in_place.py)
 * [Stock price](./stock_price.py)
+
+## 4. Sorting, searching, and logarithms
+* [Top scores](./top_scores.py) (Also in 2. Hashing and hash tables)
+* [Merging meeting times](./merging_meeting_times.py) (Also in 1. Array and string manipulation)
