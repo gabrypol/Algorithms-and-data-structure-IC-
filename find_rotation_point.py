@@ -55,5 +55,5 @@ print(find_rotation_point(my_words))
 
 '''
 Time: O(logn) because I have used binary search.
-Space: O(n). The space complexity would be O(1) if it wasn't for the check we are doing at the beginning: in order to check whether the input list is already sorted, I need to allocate a new list sorted_list of size n, where n is the length of the given list.
+Space: O(n). The space complexity would be O(1) if it wasn't for the check we are doing at the beginning: in order to check whether the given list is already sorted, I need to allocate a new list sorted_list of size n, where n is the length of the given list.
 '''
