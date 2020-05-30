@@ -39,24 +39,27 @@ def get_max_profit(stock_prices):
 '''
 
 # Solution 2:
+
+
+
+
 import math
-
 def get_max_profit(stock_prices):
-  if len(stock_prices) < 2:
-    raise ValueError('The price list has less than two elements')
+    if len(stock_prices) < 2:
+        raise ValueError('The price list has less than two elements')
 
-  for i in range(1, len(stock_prices)):
-    stock_prices[i - 1] = stock_prices[i] - stock_prices[i - 1]
-  stock_prices[-1] = 0
+    for i in range(1, len(stock_prices)):
+        stock_prices[i - 1] = stock_prices[i] - stock_prices[i - 1]
+    stock_prices[-1] = 0
 
-  if max(stock_prices) <= 0:
-    return max(stock_prices[:-1])
-  else:
-    sum_of_positive = 0
-    for i, num in enumerate(stock_prices):
-      if num > 0:
-        sum_of_positive += num
-    return sum_of_positive
+    if max(stock_prices) <= 0:
+        return max(stock_prices[:-1])
+    else:
+        sum_of_positive = 0
+        for i, num in enumerate(stock_prices):
+            if num > 0:
+                sum_of_positive += num
+        return sum_of_positive
 
 
 prices = [9, 7, 4, 1]
