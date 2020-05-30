@@ -12,10 +12,13 @@ Solution:
   This is done in place, since I haven't allocated any additional space in memory.
 '''
 
-import random
 
+
+
+import random
 def get_random(floor, ceiling):
     return random.randrange(floor, ceiling + 1)
+
 
 def shuffle_in_place(my_list):
     if len(my_list) <= 1:
@@ -26,6 +29,7 @@ def shuffle_in_place(my_list):
         my_list[i], my_list[idx_to_be_moved] = my_list[idx_to_be_moved], my_list[i]
 
     return my_list
+
 
 sample_list = [1, 2, 3, 4, 5]
 print(shuffle_in_place(sample_list))
