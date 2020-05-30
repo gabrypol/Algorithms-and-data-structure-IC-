@@ -14,37 +14,39 @@ Assume the input will only contain words and standard punctuation.
 You could make a reasonable argument to use regex in your solution. We won't, mainly because performance is difficult to measure and can get pretty bad.
 '''
 
+
 def word_cloud_data(input_string):
-  words_list = []
-  current_word_start_index = 0
-  current_word_length = 0
-  for i, char in enumerate(input_string):
-    if len(input_string) - 1 != i and (char.isalpha()  or ((char == "'" or char == "-") and input_string[i - 1].isalpha() and input_string[i + 1].isalpha())):
-      if current_word_length == 0:
-        current_word_start_index = i
-      current_word_length += 1
+    words_list = []
+    current_word_start_index = 0
+    current_word_length = 0
+    for i, char in enumerate(input_string):
+        if len(input_string) - 1 != i and (char.isalpha() or ((char == "'" or char == "-") and input_string[i - 1].isalpha() and input_string[i + 1].isalpha())):
+            if current_word_length == 0:
+                current_word_start_index = i
+            current_word_length += 1
 
-    elif char.isalpha() and len(input_string) - 1 == i:
-      word = input_string[current_word_start_index:]
-      words_list.append(word)
-    else:
-      word = input_string[current_word_start_index:current_word_start_index + current_word_length]
-      words_list.append(word)
-      current_word_length = 0
+        elif char.isalpha() and len(input_string) - 1 == i:
+            word = input_string[current_word_start_index:]
+            words_list.append(word)
+        else:
+            word = input_string[current_word_start_index:
+                                current_word_start_index + current_word_length]
+            words_list.append(word)
+            current_word_length = 0
 
-  # Now I create a list without empty strings and making sure that all characters of the string are lowercase
-  my_clean_least = []
-  for string in words_list:
-    if string != '':
-      my_clean_least.append(string.lower())
+    # Now I create a list without empty strings and making sure that all characters of the string are lowercase
+    my_clean_least = []
+    for string in words_list:
+        if string != '':
+            my_clean_least.append(string.lower())
 
-  my_dict = {}
-  for string in my_clean_least:
-    if string in my_dict:
-      my_dict[string] += 1
-    else:
-      my_dict[string] = 1
-  return my_dict
+    my_dict = {}
+    for string in my_clean_least:
+        if string in my_dict:
+            my_dict[string] += 1
+        else:
+            my_dict[string] = 1
+    return my_dict
 
 
 my_string = 'After beating the eggs, Dana read the next step'
