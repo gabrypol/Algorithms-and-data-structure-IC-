@@ -23,36 +23,41 @@ def highest_product_of_3(input_list):
 '''
 
 # Solution 3:
+
+
+
+
 import math
 def highest_product_of_3(input_list):
 
-  if len(input_list) < 3:
-    raise ValueError('Less than 3 items!')
+    if len(input_list) < 3:
+        raise ValueError('Less than 3 items!')
 
-  min_1 = math.inf
-  min_2 = math.inf
-  max_1 = -math.inf
-  max_2 = -math.inf
-  max_3 = -math.inf
+    min_1 = math.inf
+    min_2 = math.inf
+    max_1 = -math.inf
+    max_2 = -math.inf
+    max_3 = -math.inf
 
-  for num in input_list:
-    if num <= min_1:
-      min_2 = min_1
-      min_1 = num
-    elif num <= min_2:
-      min_2 = num
+    for num in input_list:
+        if num <= min_1:
+            min_2 = min_1
+            min_1 = num
+        elif num <= min_2:
+            min_2 = num
 
-    if num >= max_1:
-      max_3 = max_2
-      max_2 = max_1
-      max_1 = num
-    elif num >= max_2:
-      max_3 = max_2
-      max_2 = num
-    elif num >= max_3:
-      max_3 = num
+        if num >= max_1:
+            max_3 = max_2
+            max_2 = max_1
+            max_1 = num
+        elif num >= max_2:
+            max_3 = max_2
+            max_2 = num
+        elif num >= max_3:
+            max_3 = num
 
-  return max(max_1 * max_2 * max_3, min_1 * min_2 * max_1)
+    return max(max_1 * max_2 * max_3, min_1 * min_2 * max_1)
+
 
 my_list = [6, 1, 3, 5, 7, 8, 2]
 my_list = [-5, -1, -3, -2]
