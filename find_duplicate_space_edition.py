@@ -14,10 +14,11 @@ We're going to run this function on our new, super-hip MacBook Pro With Retina D
 
 
 def find_repeat(numbers):
-  numbers.sort()
-  for i, num in enumerate(numbers[1:], 1):
-    if numbers[i] == numbers[i - 1]:
-      return num
+    numbers.sort()
+    for i, num in enumerate(numbers[1:], 1):
+        if numbers[i] == numbers[i - 1]:
+            return num
+
 
 my_list = [4, 1, 4, 8, 3, 2, 7, 6, 5]
 print(find_repeat(my_list))
