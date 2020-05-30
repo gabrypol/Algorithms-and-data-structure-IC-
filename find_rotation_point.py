@@ -22,34 +22,35 @@ Now I have a list of words that are mostly alphabetical, except they start somew
 Write a function for finding the index of the "rotation point," which is where I started working from the beginning of the dictionary. This list is huge (there are lots of words I don't know) so we want to be efficient here.
 '''
 
+
 def find_rotation_point(words):
 
-  sorted_list = sorted(words)
-  if sorted_list == words:
-    return 0
+    sorted_list = sorted(words)
+    if sorted_list == words:
+        return 0
 
-  idx_floor = 0
-  idx_ceiling = len(words) - 1
-  first_word = words[0]
-  while idx_floor < idx_ceiling:
-    idx_guess = idx_floor + (idx_ceiling - idx_floor) // 2
-    if words[idx_guess] > first_word:
-      idx_floor = idx_guess
-    elif words[idx_guess] < first_word:
-      idx_ceiling = idx_guess
+    idx_floor = 0
+    idx_ceiling = len(words) - 1
+    first_word = words[0]
+    while idx_floor < idx_ceiling:
+        idx_guess = idx_floor + (idx_ceiling - idx_floor) // 2
+        if words[idx_guess] > first_word:
+            idx_floor = idx_guess
+        elif words[idx_guess] < first_word:
+            idx_ceiling = idx_guess
 
-    if idx_floor + 1 == idx_ceiling:
-      return idx_ceiling
+        if idx_floor + 1 == idx_ceiling:
+            return idx_ceiling
 
 
 my_words = [
-  'ptolemaic',
-  'retrograde',
-  'supplant',
-  'undulate',
-  'xenoepist',
-  'asymptote',
-  'babka',
+    'ptolemaic',
+    'retrograde',
+    'supplant',
+    'undulate',
+    'xenoepist',
+    'asymptote',
+    'babka',
 ]
 print(find_rotation_point(my_words))
 
