@@ -34,7 +34,6 @@ Note: Order numbers are arbitrary. They do not have to be in increasing order.
 '''
 
 
-
 '''
 1st SOLUTION:
 I iterate over take_out_orders list, checking that the index of its elements in served_orders are ascending. Then, I do the same for dine_in_orders: I check that the index of its elements in served_orders are ascending. If at least one check is not successful, I return False.
@@ -85,30 +84,29 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
   Space: O(1)
 '''
 
+
 def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
 
-  if len(take_out_orders) + len(dine_in_orders) != len(served_orders):
-    return False
+    if len(take_out_orders) + len(dine_in_orders) != len(served_orders):
+        return False
 
-  if take_out_orders + dine_in_orders == served_orders:
+    if take_out_orders + dine_in_orders == served_orders:
+        return True
+
+    current_index_take_out = 0
+    current_index_dine_in = 0
+
+    for order in served_orders:
+        if order != dine_in_orders[current_index_dine_in] and order != take_out_orders[current_index_take_out]:
+            return False
+        elif order == dine_in_orders[current_index_dine_in] and current_index_dine_in + 1 != len(dine_in_orders):
+            current_index_dine_in += 1
+        elif order == take_out_orders[current_index_take_out] and current_index_take_out + 1 != len(take_out_orders):
+            current_index_take_out += 1
     return True
-
-  current_index_take_out = 0
-  current_index_dine_in = 0
-
-  for order in served_orders:
-    if order != dine_in_orders[current_index_dine_in] and order != take_out_orders[current_index_take_out]:
-      return False
-    elif order == dine_in_orders[current_index_dine_in] and current_index_dine_in + 1 != len(dine_in_orders):
-      current_index_dine_in += 1
-    elif order == take_out_orders[current_index_take_out] and current_index_take_out + 1 != len(take_out_orders):
-      current_index_take_out += 1
-  return True
 
 
 take_out_orders = [1, 5, 3]
 dine_in_orders = [2, 4, 6]
 served_orders = [1, 2, 4, 6, 5, 3]
 print(is_first_come_first_served(dine_in_orders, take_out_orders, served_orders))
-
-
