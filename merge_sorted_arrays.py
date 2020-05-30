@@ -14,36 +14,37 @@ For example:
 print(merge_lists(my_list, alices_list))
 '''
 
+
 def merge_lists(my_list, alices_list):
 
-  merged_list = []
-  my_list_current_idx = 0
-  alices_list_current_idx = 0
+    merged_list = []
+    my_list_current_idx = 0
+    alices_list_current_idx = 0
 
-  if len(my_list) == 0:
-    return alices_list
+    if len(my_list) == 0:
+        return alices_list
 
-  if len(alices_list) == 0:
-    return my_list
+    if len(alices_list) == 0:
+        return my_list
 
-  while len(merged_list) <= len(my_list) + len(alices_list):
-    if my_list[my_list_current_idx] <= alices_list[alices_list_current_idx]:
-      merged_list.append(my_list[my_list_current_idx])
-      if my_list_current_idx != len(my_list) - 1:
-        my_list_current_idx += 1
-      else:
-        merged_list += alices_list[alices_list_current_idx:]
-        return merged_list
-    else:
-      merged_list.append(alices_list[alices_list_current_idx])
-      if alices_list_current_idx != len(alices_list) - 1:
-        alices_list_current_idx += 1
-      else:
-        merged_list += my_list[my_list_current_idx:]
-        return merged_list
+    while len(merged_list) <= len(my_list) + len(alices_list):
+        if my_list[my_list_current_idx] <= alices_list[alices_list_current_idx]:
+            merged_list.append(my_list[my_list_current_idx])
+            if my_list_current_idx != len(my_list) - 1:
+                my_list_current_idx += 1
+            else:
+                merged_list += alices_list[alices_list_current_idx:]
+                return merged_list
+        else:
+            merged_list.append(alices_list[alices_list_current_idx])
+            if alices_list_current_idx != len(alices_list) - 1:
+                alices_list_current_idx += 1
+            else:
+                merged_list += my_list[my_list_current_idx:]
+                return merged_list
 
 
-my_list     = [3, 4, 6, 10, 11, 15]
+my_list = [3, 4, 6, 10, 11, 15]
 alices_list = [1, 5, 8, 12, 14, 19]
 print(merge_lists(my_list, alices_list))
 
