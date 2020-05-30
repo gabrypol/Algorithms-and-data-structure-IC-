@@ -30,23 +30,25 @@ Solution 2:
 '''
 
 # Solution 2
+
+
 def get_products_of_all_ints_except_at_index(my_list):
 
-  if len(my_list) < 2:
-    raise ValueError('The list has less than two elements')
+    if len(my_list) < 2:
+        raise ValueError('The list has less than two elements')
 
-  output_list = [None] * len(my_list)
-  current_product_before = 1
-  for i, num in enumerate(my_list):
-    output_list[i] = current_product_before
-    current_product_before *= num
+    output_list = [None] * len(my_list)
+    current_product_before = 1
+    for i, num in enumerate(my_list):
+        output_list[i] = current_product_before
+        current_product_before *= num
 
-  current_product_after = 1
-  for i in range(len(my_list) - 1, -1, -1):
-    output_list[i] *= current_product_after
-    current_product_after *= my_list[i]
+    current_product_after = 1
+    for i in range(len(my_list) - 1, -1, -1):
+        output_list[i] *= current_product_after
+        current_product_after *= my_list[i]
 
-  return output_list
+    return output_list
 
 
 my_input = [1, 7, 5, 6, 2]
