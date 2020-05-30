@@ -25,16 +25,16 @@ When writing your function, assume the message contains only letters and spaces,
 
 
 def reverse_words(message):
-  reverse_chars(message, 0, len(message) - 1)
+    reverse_chars(message, 0, len(message) - 1)
 
-  current_word_1st_index = 0
-  for i, char in enumerate(message):
-      if char == ' ':
-          reverse_chars(message, current_word_1st_index, i - 1)
-          current_word_1st_index = i + 1
-      elif i == len(message) - 1:
-          reverse_chars(message, current_word_1st_index, i)
-  return message
+    current_word_1st_index = 0
+    for i, char in enumerate(message):
+        if char == ' ':
+            reverse_chars(message, current_word_1st_index, i - 1)
+            current_word_1st_index = i + 1
+        elif i == len(message) - 1:
+            reverse_chars(message, current_word_1st_index, i)
+    return message
 
 
 def reverse_chars(message, left_index, right_index):
