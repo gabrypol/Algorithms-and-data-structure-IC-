@@ -25,6 +25,7 @@ We can do better, although sacrificing the space complexity.
   Space: O(n)
 '''
 
+
 def can_two_movies_fill_flight(movie_lengths, flight_length):
 
     cache = {}
