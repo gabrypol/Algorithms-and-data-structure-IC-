@@ -27,3 +27,6 @@ In order to keep myself accountable, I have decided to share my solutions to the
 * [Merging meeting times](./merging_meeting_times.py) (Also in 1. Array and string manipulation)
 * [Find rotation point](./find_rotation_point.py)
 * [Find a duplicate, Space Edition™](./find_duplicate_space_edition.py)
+
+## 5. Trees and graphs
+* [Balanced binary tree](./balanced_binary_tree.py)
