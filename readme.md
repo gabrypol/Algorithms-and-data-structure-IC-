@@ -36,3 +36,10 @@ In order to keep myself accountable, I have decided to share my solutions to the
 - [Balanced binary tree](./balanced_binary_tree.py)
 - [Binary search tree checker](./bst_checker.py)
 - [2nd largest item in bst](./second_largest_item_in_bst.py)
+
+## 6. Dynamic programming and recursion
+
+- [nth Fibonacci](./nth_fibonacci.py)
+- [Balanced binary tree](./balanced_binary_tree.py) (Also in 5. Trees and graphs)
+- [Binary search tree checker](./bst_checker.py) (Also in 5. Trees and graphs)
+- [2nd largest item in bst](./second_largest_item_in_bst.py) (Also in 5. Trees and graphs)
