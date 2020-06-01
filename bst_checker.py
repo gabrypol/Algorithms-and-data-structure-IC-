@@ -65,5 +65,5 @@ tree.left.right = BinaryTreeNode(3)
 tree.right.left = BinaryTreeNode(5)
 tree.right.right = BinaryTreeNode(7)
 
-print("inorder:", tree.inorder_traversal(tree, []))
+print("inorder traversal:", tree.inorder_traversal(tree, []))
 print("BST check:", tree.bst_checker())
