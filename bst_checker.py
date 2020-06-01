@@ -43,6 +43,13 @@ class BinaryTreeNode(object):
             traversal = self.inorder_traversal(start.right, traversal)
         return traversal
 
+    def bst_checker(self):
+        inorder_list = self.inorder_traversal(self, [])
+        for i, num in enumerate(inorder_list[1:], 1):
+            if num <= inorder_list[i - 1]:
+                return False
+        return True
+
 #          4
 #       /      \
 #      2         6
@@ -50,21 +57,13 @@ class BinaryTreeNode(object):
 #   1     3    5    7
 
 
-myTree = BinaryTreeNode(4)
-myTree.left = BinaryTreeNode(2)
-myTree.right = BinaryTreeNode(6)
-myTree.left.left = BinaryTreeNode(1)
-myTree.left.right = BinaryTreeNode(3)
-myTree.right.left = BinaryTreeNode(5)
-myTree.right.right = BinaryTreeNode(7)
+tree = BinaryTreeNode(4)
+tree.left = BinaryTreeNode(2)
+tree.right = BinaryTreeNode(6)
+tree.left.left = BinaryTreeNode(1)
+tree.left.right = BinaryTreeNode(3)
+tree.right.left = BinaryTreeNode(5)
+tree.right.right = BinaryTreeNode(7)
 
-
-def bst_checker(my_list):
-    for i, num in enumerate(my_list[1:], 1):
-        if num <= my_list[i - 1]:
-            return False
-    return True
-
-
-print("inorder:", myTree.inorder_traversal(myTree, []))
-print(bst_checker(myTree.inorder_traversal(myTree, [])))
+print("inorder:", tree.inorder_traversal(tree, []))
+print("BST check:", tree.bst_checker())
