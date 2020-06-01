@@ -35,12 +35,12 @@ class BinaryTreeNode(object):
         self.left = None
         self.right = None
 
-    def inorder_print(self, start, traversal):
+    def inorder_traversal(self, start, traversal):
         # Left -> Root -> Right
         if start:
-            traversal = self.inorder_print(start.left, traversal)
+            traversal = self.inorder_traversal(start.left, traversal)
             traversal.append(start.value)
-            traversal = self.inorder_print(start.right, traversal)
+            traversal = self.inorder_traversal(start.right, traversal)
         return traversal
 
 #          4
@@ -66,5 +66,5 @@ def bst_checker(my_list):
     return True
 
 
-print("inorder:", myTree.inorder_print(myTree, []))
-print(bst_checker(myTree.inorder_print(myTree, [])))
+print("inorder:", myTree.inorder_traversal(myTree, []))
+print(bst_checker(myTree.inorder_traversal(myTree, [])))
