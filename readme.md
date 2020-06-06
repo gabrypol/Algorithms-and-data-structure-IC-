@@ -44,3 +44,4 @@ In order to keep myself accountable, I have decided to share my solutions to the
 - [Binary search tree checker](./bst_checker.py) (Also in 5. Trees and graphs)
 - [2nd largest item in bst](./second_largest_item_in_bst.py) (Also in 5. Trees and graphs)
 - [The cake thief](./cake_thief.py)
+- [Recursive string permutations](./recursive_string_permutations.py)
